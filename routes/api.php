@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+//API ACCOUNT
+Route::get('account', 'AccountController@index'); //read data
+Route::post('account', 'AccountController@create'); //insert data
+Route::put('account/{id}', 'AccountController@update'); //update data
+Route::delete('account/{id}', 'AccountController@delete'); //delete data
