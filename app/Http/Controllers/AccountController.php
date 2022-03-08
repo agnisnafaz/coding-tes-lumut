@@ -49,7 +49,7 @@ class AccountController extends Controller
         $data['status'] = true; //menampilkam status
         $data['message'] = "Data Account"; //menampilkan pesan
         $data['data'] = DB::select("SELECT * FROM accounts"); //mengambil data account
-        return $data; //menampilkan data buku
+        return $data; //menampilkan data account
     }
 
     //create account
@@ -109,10 +109,10 @@ class AccountController extends Controller
     //delete account
     public function delete($username) //deklarasi fungsi delete
     {
-        $account = buku::find($username); //mengambil data account berdasarkan username
+        $account = Account::find($username); //mengambil data account berdasarkan username
 
-        if ($account) { //mengecek apakah data buku ada atau tidak
-            $delete = $account->delete(); //menghapus data buku
+        if ($account) { //mengecek apakah data account ada atau tidak
+            $delete = $account->delete(); //menghapus data account
 
             if ($delete) { //jika fungsi berhasil dihapus
                 $data['status'] = true;
